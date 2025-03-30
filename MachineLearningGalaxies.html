@@ -13806,48 +13806,6 @@ Actual Classification:  0
 </div>
 </div>
 </div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-36-e39958c9e4e2&gt;</span> in <span class="ansi-cyan-fg">&lt;cell line: 0&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     23</span> 
-<span class="ansi-green-intense-fg ansi-bold">     24</span> 
-<span class="ansi-green-fg">---&gt; 25</span><span class="ansi-red-fg"> </span>train_images<span class="ansi-blue-fg">,</span> train_labels<span class="ansi-blue-fg">,</span> test_images<span class="ansi-blue-fg">,</span> test_labels <span class="ansi-blue-fg">=</span> load_data<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     26</span> 
-<span class="ansi-green-intense-fg ansi-bold">     27</span> model <span class="ansi-blue-fg">=</span> build_model<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-13-41d8628b978f&gt;</span> in <span class="ansi-cyan-fg">load_data</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> load_data<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">with</span> gzip<span class="ansi-blue-fg">.</span>open<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"dataG.pkl.gz"</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">'rb'</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> f<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">         </span>train_images_raw<span class="ansi-blue-fg">,</span> train_labels<span class="ansi-blue-fg">,</span> test_images_raw<span class="ansi-blue-fg">,</span> test_labels <span class="ansi-blue-fg">=</span> pickle<span class="ansi-blue-fg">.</span>load<span class="ansi-blue-fg">(</span>f<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> 
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span class="ansi-red-fg">#Adds a demention to represent the channel(needed for the CNN) and normalizes the data</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.11/gzip.py</span> in <span class="ansi-cyan-fg">read</span><span class="ansi-blue-fg">(self, size)</span>
-<span class="ansi-green-intense-fg ansi-bold">    299</span>             <span class="ansi-green-fg">import</span> errno
-<span class="ansi-green-intense-fg ansi-bold">    300</span>             <span class="ansi-green-fg">raise</span> OSError<span class="ansi-blue-fg">(</span>errno<span class="ansi-blue-fg">.</span>EBADF<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">"read() on write-only GzipFile object"</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 301</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_buffer<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span>size<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    302</span> 
-<span class="ansi-green-intense-fg ansi-bold">    303</span>     <span class="ansi-green-fg">def</span> read1<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> size<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/lib/python3.11/_compression.py</span> in <span class="ansi-cyan-fg">readinto</span><span class="ansi-blue-fg">(self, b)</span>
-<span class="ansi-green-intense-fg ansi-bold">     65</span> 
-<span class="ansi-green-intense-fg ansi-bold">     66</span>     <span class="ansi-green-fg">def</span> readinto<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> b<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 67</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">with</span> memoryview<span class="ansi-blue-fg">(</span>b<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> view<span class="ansi-blue-fg">,</span> view<span class="ansi-blue-fg">.</span>cast<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"B"</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> byte_view<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     68</span>             data <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span>len<span class="ansi-blue-fg">(</span>byte_view<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     69</span>             byte_view<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span>len<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> data
-
-<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
