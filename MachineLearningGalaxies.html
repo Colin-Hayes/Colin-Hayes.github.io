@@ -13,7 +13,7 @@
             position: fixed;
             top: 0;
             bottom: 0;
-            left: 0;
+            left: clamp(0%, calc(30% - 300px), 30%);
             width: 260px;
             background: #f8f9fa;
             border-right: 1px solid #dee2e6;
@@ -23,7 +23,8 @@
         }
 
         .main-content {
-            margin-left: 280px;
+            margin-left: calc(clamp(0%, calc(30% - 300px), 30%) + 280px);
+            margin-right: clamp(0%, calc(30% - 300px), 30%);;
             padding: 20px;
         }
 
@@ -16006,6 +16007,10 @@ Adapted from GitHub theme
                 page-break-inside: avoid;
             }
         }
+
+        /*img {*/
+        /*    border-radius: 50%;*/
+        /*}*/
     </style>
     <!-- Load mathjax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
@@ -16046,33 +16051,32 @@ Adapted from GitHub theme
 
 <body>
     <!-- Sidebar Navigation -->
-      <!-- Sidebar Navigation -->
-  <div class="sidebar">
-    <div class="sidebar-header">
-      <h3>Colin Hayes</h3>
-    <img src="images/profile_photo.jpg"> 
-      <div><a href="mailto:cmhayes2@illinois.edu", aria-hidden="true">Email</a></div>
-      <div><a href="linkedin.com/in/colin-hayes-467141305">LinkedIn</a></div>
-      <div><a href="https://github.com/Colin-Hayes">GitHub</a></div>
-    </div>
-    
-    <nav class="sidebar-nav">
-        <h4>My Projects</h5>
-      <ul>
-        <li><a href="https://colin-hayes.github.io/MachineLearningGalaxies.html">Machine Learning Galaxies</a></li>
-        <li><a href="https://colin-hayes.github.io/FluidDynamicsSimulation.html">Fluid Dynamics Simulation</a></li>
-        <!--<li><a href="#">Project 3</a></li>-->
-        <!--<li><a href="#">Project 4</a></li>-->
-        <!--<li><a href="#">Project 5</a></li>-->
-      </ul>
-    </nav>
-  </div>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 style="text-align: center; font-family: 'Georgia';">Colin Hayes</h3>
+            <br>
+            <div><img class= "img-circle" src=https://colin-hayes.github.io/images/profile_photo.jpg style=" width:100%;"></div>
+            <br>
+            <p style="text-align: center;" ><a href="mailto:cmhayes2@illinois.edu" style="color: #000000; ">Email</a> | <a href="linkedin.com/in/colin-hayes-467141305" style="color: #000000; ">LinkedIn</a> | <a href="https://github.com/Colin-Hayes" style="color: #000000; ">GitHub</a></p>
+        </div>
 
-  <!-- Main Content Area -->
-  <div class="main-content">
-    <!-- Your existing content goes here -->
-    <h1>Machine Learning Galaxies</h1>
-    <main>
+        <nav class="sidebar-nav">
+            <h4>My Projects</h5>
+                <ul>
+                    <li><a href="https://colin-hayes.github.io/MachineLearningGalaxies.html">Machine Learning Galaxies</a></li>
+                    <li><a href="https://colin-hayes.github.io/FluidDynamicsSimulation.html">Fluid Dynamics Simulation</a></li>
+                    <!--<li><a href="#">Project 3</a></li>-->
+                    <!--<li><a href="#">Project 4</a></li>-->
+                    <!--<li><a href="#">Project 5</a></li>-->
+                </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Your existing content goes here -->
+        <h1>Machine Learning Galaxies</h1>
+<main>
         
                 <div class="cell border-box-sizing text_cell rendered">
                     <div class="prompt input_prompt">
@@ -17000,8 +17004,8 @@ Test Accuracy: 0.8265
                 </div>
         
     </main>
-  </div>
-    
+    </div>
+
 </body>
 
 </html>
